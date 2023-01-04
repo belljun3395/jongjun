@@ -2,7 +2,7 @@
 
 ## MSA 환경구축을 위한 사전조사
 
-![MSAvsMONOLITHC](/Users/jongjun/Desktop/jongjun/project/smilegate/img/MSAvsMONOLITHC.png)
+![MSAvsMONOLITHC](https://user-images.githubusercontent.com/102807742/210471993-89ae98d3-2edf-453b-bec2-8d22f2ca51b3.png)
 
 위는 모놀리식 방식과 MSA 방식을 나타내는 사진이다.
 
@@ -58,7 +58,7 @@ Eureka Server가 동적으로 서버를 찾아주어 우리가 수동적으로 �
 
 **일정 시간** 경과 후에 단 한개의 요청에 대해서 호출을 허용하며, 이 호출이 성공하면 -> **Circuit Close**
 
-![feign](/Users/jongjun/Desktop/jongjun/project/smilegate/img/feign.png)
+![feign](https://user-images.githubusercontent.com/102807742/210472027-9b1a2708-9d0e-4af6-9301-95f19c44b566.png)
 
 위 사진은 Circuit Breaker를 구현하기 위한 대표적인 라이브러리인 Fegin의 요청 흐름을 나타내는 것이다.
 
@@ -90,9 +90,9 @@ Key Word:  API Quota, Throttling  -> 추가적인 공부 필요
 
 이런 Gateway를 구현하는데는 크게 Spring Cloud와 Zuul를 사용하여 구현할 수 있다.
 
-![zuul](/Users/jongjun/Desktop/jongjun/project/smilegate/img/zuul.png)
+![zuul](https://user-images.githubusercontent.com/102807742/210472085-6a8e932a-cb81-498f-89ce-7918d4a1988a.png)
 
-![springCloud](/Users/jongjun/Desktop/jongjun/project/smilegate/img/springCloud.png)
+![springCloud](https://user-images.githubusercontent.com/102807742/210472114-3435e07f-595c-4d02-9167-3fb71d6e7e4c.png)
 
 위의 두 사진은 zuul과 spring cloud gateway가 어떻게 동작하는지를 나타내는 사진들이다.
 
@@ -120,7 +120,7 @@ Key Word:  API Quota, Throttling  -> 추가적인 공부 필요
 
 **Spring Cloud로 구현하는 MSA Archietecture 예시)**
 
-![SpringCloudMSAArchietecture](/Users/jongjun/Desktop/jongjun/project/smilegate/img/SpringCloudMSAArchietecture.png)
+![SpringCloudMSAArchietecture](https://user-images.githubusercontent.com/102807742/210472137-0f85f460-5c07-41c0-9e84-32842c6d72b1.png)
 
 
 
@@ -151,7 +151,7 @@ MSA 환경을 구축하는 파트의 경우 기본적으로 다음의 것들을 
 
 또 이것과 더하여 인증, 인가를 함께하는 것이 효율적일 것이라 생각한다.
 
-![kakaLoginwithApiGateway](/Users/jongjun/Desktop/jongjun/project/smilegate/img/kakaLoginwithApiGateway.png)
+<img width="1036" alt="kakaLoginwithApiGateway" src="https://user-images.githubusercontent.com/102807742/210472159-4fa75509-abfa-4370-a875-93cca85d211d.png">
 
 위는 카카오의 Api Gateway와 함께 구축한 인증, 인가 과정이다.
 

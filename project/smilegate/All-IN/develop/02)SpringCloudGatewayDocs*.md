@@ -22,7 +22,7 @@
 
 ### 동작 방식
 
-![spring_cloud_gateway_diagram](https://cloud.spring.io/spring-cloud-gateway/reference/html/images/spring_cloud_gateway_diagram.png)
+![springCloud](https://user-images.githubusercontent.com/102807742/210472406-d2c85371-ba13-4055-be29-2af5cb6fc4dc.png)
 
 1. 클라이언트가 Srping Cloud Gateway에 요청을 한다.
 2. Gateway Handler Mapping이 요청과 라우터를 매칭 시킨후 Gateway Web Handler로 보낸다.

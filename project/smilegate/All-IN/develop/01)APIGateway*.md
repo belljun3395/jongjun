@@ -69,7 +69,7 @@ Zuul의 경우 Zuul1 그리고 Zuul2 두 가지 버전이 존재한다.
 
 ##### 장/단점
 
-##### ![1_pz6sv69la9ek6yWNTPqymQ](/Users/jongjun/Desktop/jongjun/project/smilegate/img/1_pz6sv69la9ek6yWNTPqymQ.webp)
+##### ![1_pz6sv69la9ek6yWNTPqymQ](https://user-images.githubusercontent.com/102807742/210472305-8e4481dc-ddf7-4626-bf1c-4bb9335b4039.png)
 
 본인이 생각하기에 Zuul의 가장 큰 장점은 위에 사진에서 볼 수 있듯 Netflix에서 제공하는 다양한 라이브러리이다.
 
@@ -119,7 +119,7 @@ Tocat은 `1THREAD / 1REQUEST 방식` 이고 Netty는 비동기 WAS며 `1THREAD /
 
 
 
-![스크린샷 2023-01-03 오후 5.42.47](/Users/jongjun/Desktop/jongjun/project/smilegate/img/스크린샷 2023-01-03 오후 5.42.47.png)
+![스크린샷 2023-01-03 오후 5 42 47](https://user-images.githubusercontent.com/102807742/210472328-62c765cd-11a2-4c2a-bda5-3cb79e4b0476.png)
 
 또 위의 사진에서 볼 수 있듯 최소 2025년까지 지원 계획이 잡혀있다..ㅎㅎ
 

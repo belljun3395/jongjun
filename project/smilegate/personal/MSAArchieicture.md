@@ -87,9 +87,9 @@ Then
 
 이러한 분석을 몇 차례 거듭하면 다음과 같은 핵심 클래스로 구성된 도메인 모델이 완성된다.
 
-![마이크로서비스_아키텍처_정의_1](/Users/jongjun/Desktop/jongjun/project/smilegate/img/마이크로서비스_아키텍처_정의_1.png)
+<img width="547" alt="마이크로서비스_아키텍처_정의_1" src="https://user-images.githubusercontent.com/102807742/210472452-75251ccf-11db-4e58-a300-bb568b7d2ffa.png">
 
-![마이크로서비스_아키텍처_정의_2](/Users/jongjun/Desktop/jongjun/project/smilegate/img/마이크로서비스_아키텍처_정의_2.png)
+<img width="479" alt="마이크로서비스_아키텍처_정의_2" src="https://user-images.githubusercontent.com/102807742/210472486-f3197f6c-243c-412d-827c-7d9add905e14.png">
 
 
 
@@ -108,7 +108,7 @@ Then
 
 다른 스토리도 시스템 커멘드와 직접 매핑된다.
 
-![마이크로서비스_아키텍처_정의_3](/Users/jongjun/Desktop/jongjun/project/smilegate/img/마이크로서비스_아키텍처_정의_3.png)
+<img width="527" alt="마이크로서비스_아키텍처_정의_3" src="https://user-images.githubusercontent.com/102807742/210472503-08db5686-7c61-4ac5-80e4-0cbec4dfb1c0.png">
 
 커맨드는 매개변수, 반환값, 동작 방식의 도메인 모델 클래스로 정의한다.
 
