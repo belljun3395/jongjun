@@ -1,10 +1,12 @@
 ## Media Server Architecture
 
-![MediaServiceArchitecture](https://user-images.githubusercontent.com/102807742/211788805-488874d4-8421-4582-85b3-2df7bafed318.png)
+![MediaArchitecture수정](https://user-images.githubusercontent.com/102807742/212655506-a7742981-b652-4333-b45c-906e6a078777.png)
 
 
 
-위는 현시점(2022.1.11)에 설계한 Media Service Archecture이다.
+~~위는 현시점(2022.1.11)에 설계한 Media Service Archecture이다.~~
+
+위는 현시점(2022.1.16)에 설계한 Media Service Archiecture이다.
 
 크게 Nginx를 기반으로 nginx-rtmp-module을 활용한 **Media Server**,
 
@@ -16,7 +18,7 @@
 
 라이브 영상을 서버에 저장하기 위한 **Origin Server**,
 
-그리고 이들 사이에서 정보교환을 담당하는 **Kafka**,
+~~그리고 이들 사이에서 정보교환을 담당하는 **Kafka**,~~
 
 마지막으로 CDN 많아질 경우 CDN에 대한 요청을 분산할 **Load Balancer** 로 구성되어 있다.
 
@@ -105,43 +107,53 @@ Media Server가 Nginx 기반이기에 Media Server 내에서 인증관련 처리
 
 ---
 
-#### 방안 1)
+#### ~~방안 1)~~
 
-Manager Server을 통해 검증에 필요한 데이터를 받는다.
+~~Manager Server을 통해 검증에 필요한 데이터를 받는다.~~
 
-이 데이터를 DB에 저장하고 이를 Media Server의 Nginx와 공유하여 검증과정을 Media Server에서 진행한다.
+~~이 데이터를 DB에 저장하고 이를 Media Server의 Nginx와 공유하여 검증과정을 Media Server에서 진행한다.~~
 
 #### 방안 2)
 
 Media Server에서 필요한 검증의 경우 Manager Server로 그 정보들을 라우팅하여 Manager Server에서 검증을 진행한다.
 
+: rtmp 설정중 on_publish라는 설정을 통해 방송을 하려고 하는 순간에 Manger Server에서 검증을 진행 할 수 있다.
+
 ---
 
 
 
-### CDN, Origin Server, Kafka
+### CDN, Origin Server, ~~Kafka~~, FFmpeg
 
-이 부분이 가장 애매하였던 부분이다.
+~~이 부분이 가장 애매하였던 부분이다.~~
 
-사실 Media Server의 데이터를 그냥 CDN, Origin Server에 릴레이 형식으로 전달하여도 문제는 없다.
+~~사실 Media Server의 데이터를 그냥 CDN, Origin Server에 릴레이 형식으로 전달하여도 문제는 없다.~~
 
-하지만 CDN이나 Origin Server가 적으면 문제가 없겠지만 CDN이 추가가 된다면? Origin Server가 추가된다면 하는 생각을 하면 이는 문제가 될 것 같다는 생각을 하였다.
+~~하지만 CDN이나 Origin Server가 적으면 문제가 없겠지만 CDN이 추가가 된다면? Origin Server가 추가된다면 하는 생각을 하면 이는 문제가 될 것 같다는 생각을 하였다.~~
 
-그래서 이러한 문제를 해결할 수 있는 방법을 생각하였을 때 Kafka를 활용하면 어떨까? 하는 생각이 들었다.
+~~그래서 이러한 문제를 해결할 수 있는 방법을 생각하였을 때 Kafka를 활용하면 어떨까? 하는 생각이 들었다.~~
 
-Kafka를 활용하면 Media Server에서 Kafka의 메시지를 생산하고 이 메시지가 필요한 곳에서 메시지를 소비하는 것이다.
+~~Kafka를 활용하면 Media Server에서 Kafka의 메시지를 생산하고 이 메시지가 필요한 곳에서 메시지를 소비하는 것이다.~~
 
-그렇게 된다면 Media Server은 Kafka에게만 메시지를 보내면 된다.
+~~그렇게 된다면 Media Server은 Kafka에게만 메시지를 보내면 된다.~~
 
-CDN이나 Origin Server가 추가된다면? 이때는 Media Server가 생산한 메시지를 소비하기만 하면된다.
+~~CDN이나 Origin Server가 추가된다면? 이때는 Media Server가 생산한 메시지를 소비하기만 하면된다.~~
 
-이러한 생각이 가능한 것인가 확인하기 위해 테스트를 해본 결과 Kafka를 통해 영상 데이터가 옮겨지기는 한다.
+~~이러한 생각이 가능한 것인가 확인하기 위해 테스트를 해본 결과 Kafka를 통해 영상 데이터가 옮겨지기는 한다.~~
 
-그런데 이러한 사용의 장단을 아직 정확하게 파악하지는 못하여 조금 더 검토가 필요할 것 같다.
+~~그런데 이러한 사용의 장단을 아직 정확하게 파악하지는 못하여 조금 더 검토가 필요할 것 같다.~~
 
-이와 더불어 Origin Server에서는 영상을 파일로 저장할 것인지 아님 DB에 저장할 것인지 아직 정하지 못하였다.
+~~이와 더불어 Origin Server에서는 영상을 파일로 저장할 것인지 아님 DB에 저장할 것인지 아직 정하지 못하였다.~~
 
-대용량 데이터의 경우 하둡과 카산드라를 통해 저장할 수 있다고 하는데 이 역시 조금 더 검토가 필요할 것 같다.
+~~대용량 데이터의 경우 하둡과 카산드라를 통해 저장할 수 있다고 하는데 이 역시 조금 더 검토가 필요할 것 같다.~~
+
+CDN과 Origin Server 역시 Nginx를 사용한다.
+
+이렇게 되면 통신 및 그 결과는 다음과 같이 될 것이다.
+
+**OBS** -> RTMP -> **Media** -> RTMP -> **Origin** ->  **File**(최고 화질)
+
+**OBS** -> RTMP -> **Media** -> RTMP -> **CDN** ->  HLS (화질 다양화 by FFmpeg) -> **Consumer**
 
 
 
@@ -152,3 +164,7 @@ CDN의 갯수가 증가한다면 Load Balancer가 필요할 것이라 생각한�
 이전에는 Eureka를 활용하여 Server들을 찾고 Ribon을 활용하여 Load Balancing을 하였다.
 
 하지만 위는 Spring boot 기반의 Server들에 해당한 것이기 때문이 이번에는 다양한 옵션을 고려해보아야 할 것 같고 이와 관련해서는 오픈소스들이 많기 때문에 이 역시 조금 더 검토 후 결정하면 될 것 같다.
+
+: 이번에는 Load Balancer 역시 Nginx를 사용할 것 같다.
+
+대신 Load Balancer를 통해 들어오는 요청을 log로 남겨두어 이를 가지고 ELK를 사용할 수 있는 기반을 만들어 두어야겠다.
