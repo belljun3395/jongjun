@@ -29,8 +29,17 @@ Project는 진행한 프로젝트에 관한 기록입니다. ( 프로젝트 소�
 [Medium](https://medium.com/@belljun3395)과 함께 기록합니다.
 
 + ecnv
-  + econo_forest_iptime 
+  + [econo_forest_iptime ](https://github.com/belljun3395/jongjun/tree/main/project/ecnv/forest)
   
 
 
+
+### Think 🤔
+
+Think는 제가 생각하고 고민한 것에 관한 기록입니다.
+
+[Medium](https://medium.com/@belljun3395)과 함께 기록합니다.
+
++ monthly
+  + [whyDeveloper](https://github.com/belljun3395/jongjun/tree/main/monthly/whyDeveloper)
 
