@@ -26,8 +26,10 @@ Study는 개인적으로 공부하는 것에 관한 기록입니다.
 
 Project는 진행한 프로젝트에 관한 기록입니다. ( 프로젝트 소개, 이슈 등에 관한 글을 적을 예정입니다. )
 
+[Medium](https://medium.com/@belljun3395)과 함께 기록합니다.
+
 + ecnv
-  + econo_forest_iptime
+  + econo_forest_iptime 
   
 
 
