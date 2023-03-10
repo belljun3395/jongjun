@@ -4,7 +4,7 @@
 
 ### Authenticating users with Sign in with Apple
 
-![sign-in-with-apple-2~dark@2x](https://docs-assets.developer.apple.com/published/190373199a/sign-in-with-apple-2~dark@2x.png)
+<img width="374" alt="sign-in-with-apple-2_dark@2x" src="https://user-images.githubusercontent.com/102807742/224207923-dcd37fe9-7cd9-4860-8ce9-ecc577607cf4.png">
 
 위 사진은 Apple에서 제공하는 로그인 과정에 대한 시퀀스 다이어그램이다.
 
@@ -101,7 +101,7 @@ API 응답에서 사용자 정보를 받으면 즉시 로컬에 저장하여 프
 
 아래 사진은 Apple에서 제공하는 유저 검증 시퀀스 다이어그램이다.
 
-![sign-in-with-apple-3~dark@2x](https://docs-assets.developer.apple.com/published/bdfb4885e6/sign-in-with-apple-3~dark@2x.png)
+<img width="441" alt="sign-in-with-apple-3_dark@2x" src="https://user-images.githubusercontent.com/102807742/224207960-4067e0df-8508-4a8e-b510-6c26cf6b48ce.png">
 
 
 
