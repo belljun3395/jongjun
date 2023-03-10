@@ -1,10 +1,10 @@
-## [Oauth2.0] Apple 로그인 구현 논의사항
+## [Oauth2.0] Apple 로그인 구현 논의사항1
 
 구현에 앞서 살펴본 공식 문서와 기존 코드 파악을 통해 구현 전 논의사항을 정리해보려 한다.
 
 
 
-우선 기존 코드는 로그인 시 어떤 토큰을 받고 있는지 우선 알아보자.
+### 우선 기존 코드는 로그인 시 어떤 토큰을 받고 있는지 우선 알아보자.
 
 ```java
 public class SignMemberRequest {
@@ -32,7 +32,7 @@ MemberInfo info = getInfo(request.getCertificationSubject(), request.getSocialTo
 
 우선 Apple ID 서버를 통해 로그인하였을 때 받을 수 있는 **ID 토큰**이 있다.
 
-그리고 이때 받은 ID 토큰과 인증 코드를 통해 받은 **refresh token, access token**이 있다.
+그리고 이때 받은 ID 토큰과 인증 코드를 통해 받은 **refresh 토큰, access 토큰**이 있다.
 
 
 
@@ -43,8 +43,8 @@ MemberInfo info = getInfo(request.getCertificationSubject(), request.getSocialTo
 [Apple 공식 문서](https://developer.apple.com/documentation/sign_in_with_apple/sign_in_with_apple_rest_api)에서 확인할 수 있는 엔드포인트 목록이다.
 
 + Apple public key
-+ token 생성 및 검증
-+ token 취소
++ 토큰 생성 및 검증
++ 토큰 취소
 
 위에서 확인할 수 있듯 멤버의 정보를 조회하지 못한다.
 
@@ -54,15 +54,15 @@ MemberInfo info = getInfo(request.getCertificationSubject(), request.getSocialTo
 
 하지만 ID 토큰을 굳이 가지고 받을 필요는 없을 것 같다.
 
-왜냐하면 **ID 토큰의 경우 refresh token을 생성하거나 검증하는 과정에서 다시 한번 받을 수 있기 때문이다.**
+왜냐하면 **ID 토큰의 경우 refresh 토큰을 생성하거나 검증하는 과정에서 다시 한번 받을 수 있기 때문이다.**
 
-그렇기에 현재 파악한 바로는 **refresh token을 프런트로부터 로그인을 위해 받는 것이 좋을 것 같다는 생각이다.**
+그렇기에 현재 파악한 바로는 **refresh 토큰을 프런트로부터 로그인을 위해 받는 것이 좋을 것 같다는 생각이다.**
 
 
 
 ### 1-2. client secret
 
-Apple 로그인에서는 refresh token을 검증 및 생성하기 위해서 Apple ID 서버에서 제공하는 공개키를 통해 ID 토큰의 일부 요소를 검증하고 client secret과 함께 Apple ID 서버에 token 검증 및 생성을 요청해야 한다.
+Apple 로그인에서는 refresh 토큰을 검증 및 생성하기 위해서 Apple ID 서버에서 제공하는 공개키를 통해 ID 토큰의 일부 요소를 검증하고 client secret과 함께 Apple ID 서버에 토큰 검증 및 생성을 요청해야 한다.
 
 **client secret을 생성하기 위해서는 Apple Developer에서 다운로드한 private 키를 통해 서명해야 하는데 이 파일을 백단에서 관리해야 할 것 같다는 생각이 든다.**
 
@@ -72,7 +72,7 @@ Apple 로그인에서는 refresh token을 검증 및 생성하기 위해서 Appl
 
 만약 컨트롤러를 구현한다면 **client secret을 반환하는 것이 좋을까?**
 
-아니면 이때 **차라리 ID 토큰까지 받아 token까지 발급하여 반환하는 것이 좋을까?**
+아니면 이때 **차라리 ID 토큰까지 받아 토큰까지 발급하여 반환하는 것이 좋을까?**
 
 
 
