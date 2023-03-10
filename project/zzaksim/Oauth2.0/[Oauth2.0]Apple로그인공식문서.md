@@ -141,7 +141,7 @@ ID 토큰 검증을 위해서는 먼저 **ID 토큰과 인증 코드를 앱 서�
 
 Apple 로그인을 위해서는 JWT가 각 유효성 검사 요청을 승인해야 한다.
 
-그리고 **client secret token을 만들고 난 이후에는 Apple Developer에서 다운로드한 private 키를 통해 서명해야 한다.**
+그리고 **client secret을 만들고 난 이후에는 Apple Developer에서 다운로드한 private 키를 통해 서명해야 한다.**
 
 서명된 JWT를 만들기 위해서는 
 
@@ -172,7 +172,7 @@ JWT를 만들기 위해 헤더에는 다음 필드와 값을 사용한다.
 
 #### Obtain a refresh token
 
-**ID 토큰을 서버에서 인증한 후** `client_id`, `client_secret`를 통해 **token을 생성하고 검증한다.**
+**ID 토큰을 앱서버에서 인증한 후** `client_id`, `client_secret`를 통해 **토큰을 생성하고 검증한다.**
 
 ---
 
@@ -184,15 +184,15 @@ JWT를 만들기 위해 헤더에는 다음 필드와 값을 사용한다.
 
 **HTTP Body**
 
-+ `form-data` : 서버가 인증 코드 또는 refresh token의 유효성을 검사하는 데 필요한 입력 매개변수 목록이다.
++ `form-data` : 서버가 인증 코드 또는 refresh 토큰의 유효성을 검사하는 데 필요한 입력 매개변수 목록이다.
 
 + `Content-Type` : application/x-www-form-urlencoded
 
 + `client_id / string / required` : 앱의 식별자다. (앱 ID 또는 서비스 ID)
-+ `client_secret / string / required` : **개발자가 생성한 JWT 토큰**으로, **개발자 계정과 연결된** Apple private 키를 사용하여 로그인한다. 그리고 **인증 코드 및 refresh token 유효성 검사 요청에는 이 매개변수가 필요하다.**
++ `client_secret / string / required` : **개발자가 생성한 JWT 토큰**으로, **개발자 계정과 연결된** Apple private 키를 사용하여 로그인한다. 그리고 **인증 코드 및 refresh 토큰 유효성 검사 요청에는 이 매개변수가 필요하다.**
 + `code / string` :  앱으로 전송된 인증 응답에 포함된 인증코드다. 이 코드는 일회용이며 5분 동안 유효하다. 인증 코드 유효성 검사 요청에는 이 매개 변수가 필요하다.
-+ `grant_type / string / required` :  권한 부여 유형에 따라 클라이언트 앱이 유효성 검사 서버와 상호 작용하는 방식이 결정된다. 인증 코드 및 refresh token 유효성 검사 요청에는 이 매개 변수가 필요하다. 인증 코드에는 `authorization_code` refresh token에는 `refresh_token`을 사용한다.
-+ `refresh_token / string` : 권한 부여 요청 중에 유효성 검사 서버로부터 받은 refresh_token이다. 토큰 유효성 검사를 요청하려면 refresh token 매개변수가 필요하다.
++ `grant_type / string / required` :  권한 부여 유형에 따라 클라이언트 앱이 유효성 검사 서버와 상호 작용하는 방식이 결정된다. 인증 코드 및 refresh 토큰 유효성 검사 요청에는 이 매개 변수가 필요하다. 인증 코드에는 `authorization_code` refresh 토큰에는 `refresh_token`을 사용한다.
++ `refresh_token / string` : 권한 부여 요청 중에 유효성 검사 서버로부터 받은 refresh_token이다. 토큰 유효성 검사를 요청하려면 refresh_token 매개변수가 필요하다.
 + `redirect_uri / string` : 앱으로 사용자를 인증할 때 인증 요청에 제공된 대상 URI다. URI는 HTTPS 프로토콜을 사용해야 하고 도메인 이름을 포함해야 하며 IP 주소나 로컬 호스트는 포함할 수 없다. **인증 코드 요청에는 이 매개변수가 필요하다.**
 
 **Response Code**
@@ -200,16 +200,16 @@ JWT를 만들기 위해 헤더에는 다음 필드와 값을 사용한다.
 + `Content-Type` : application/json
 + `TokenResponse`
   + `access_token / string` : 허용된 데이터에 액세스하는데 사용되는 토큰이다.
-  + `expires_in / number` : access token 만료시간 이전 남은 시간, 초이다.
+  + `expires_in / number` : access 토큰 만료시간 이전 남은 시간, 초이다.
   + `id_token / string` : JWT로 유저 정보를 포함하고 있다.
-  + `refresh_token / string` : 인증 코드의 유효성을 검사할 때 새로운 access token을 다시 생성하는 데 사용되는 refresh token이다. **기존 refresh token의 유효성을 검사할 때는 반환되지 않는다.**
-  + `token_type / string` : access token의 타입이다. 늘 `bearer` 이다.
+  + `refresh_token / string` : 인증 코드의 유효성을 검사할 때 새로운 access 토큰을 다시 생성하는 데 사용되는 refresh 토큰이다. **기존 refresh 토큰의 유효성을 검사할 때는 반환되지 않는다.**
+  + `token_type / string` : access 토큰의 타입이다. 늘 `bearer` 이다.
 
 ---
 
-**검증에 성공하면 서버에서 refresh token을 발급하며, 이 토큰을 사용하여 이후 access token을 얻을 수 있다.**
+**검증에 성공하면 서버에서 refresh 토큰을 발급하며, 이 토큰을 사용하여 이후 access token을 얻을 수 있다.**
 
-하루에 한 번 refresh token을 확인하여 해당 디바이스에 있는 사용자의 Apple ID가 여전히 Apple 서버에서 정상 상태인지 확인하여야 한다.
+하루에 한 번 refresh 토큰을 확인하여 해당 디바이스에 있는 사용자의 Apple ID가 여전히 Apple 서버에서 정상 상태인지 확인하여야 한다.
 
 
 
@@ -227,7 +227,7 @@ JWT를 만들기 위해 헤더에는 다음 필드와 값을 사용한다.
   + `Content-Type`: application/x-www-form-urlencoded
   + `client_id / string / required` : 앱의 식별자다. (앱 ID 또는 서비스 ID)
   + `client_secret / string / required` : 개발자가 생성한 JWT 토큰으로, 개발자 계정과 연결된 Apple private 키로 로그인할때 사용된다. 
-  + `token / string / required` : 해지하려는 사용자의 refresh token 혹은 access token이다. 요청이 성공하면 제공된 토큰과 연결된 사용자 세션이 해지된다.
+  + `token / string / required` : 해지하려는 사용자의 refresh 토큰 혹은 access 토큰이다. 요청이 성공하면 제공된 토큰과 연결된 사용자 세션이 해지된다.
   + `token_type_hint / string` : 해지를 위해 제출한 토큰 유형에 대한 힌트다. `refresh_token` 혹은  `access_token`을 사용한다.
 
 ---
@@ -236,4 +236,4 @@ JWT를 만들기 위해 헤더에는 다음 필드와 값을 사용한다.
 
 ##### 정리
 
-ID 토큰 그리고 인증코드를 통해 **refresh token을 발급하는 방법과 이를 검증하는 방법을 소개하였다.**
+ID 토큰 그리고 인증코드을 앱서버에서 받아 이를 통해 **refresh 토큰을 발급하는 방법과 이를 검증하는 방법을 소개하였다.**
