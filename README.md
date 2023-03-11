@@ -17,8 +17,8 @@ Study는 개인적으로 공부하는 것에 관한 기록입니다.
 + [java](https://github.com/belljun3395/jongjun/tree/main/study/java) 
   + [모던 자바인 액션](https://github.com/belljun3395/jongjun/tree/main/study/java/modenJavaInAction)
   + [오브젝트](https://github.com/belljun3395/jongjun/tree/main/study/java/object)
-+ [spring](https://github.com/belljun3395/jongjun/tree/main/study/spring) (스프링의 경우 따로 패키지를 나누지 않았습니다.)
-  + 전문가를 위한 스프링5
++ [spring](https://github.com/belljun3395/jongjun/tree/main/study/spring)
+  + [전문가를 위한 스프링5](https://github.com/belljun3395/jongjun/tree/main/study/spring/%EC%A0%84%EB%AC%B8%EA%B0%80%EB%A5%BC%EC%9C%84%ED%95%9C%EC%8A%A4%ED%94%84%EB%A7%815)
 
 
 
@@ -31,7 +31,8 @@ Project는 진행한 프로젝트에 관한 기록입니다. ( 프로젝트 소�
 + ecnv
   + [econo_forest_iptime ](https://github.com/belljun3395/jongjun/tree/main/project/ecnv/forest)
   
-
++ [zzaksim](https://github.com/belljun3395/jongjun/tree/main/project/zzaksim)
+  + [Oauth2.0/Apple_Login](https://github.com/belljun3395/jongjun/tree/main/project/zzaksim/Oauth2.0)
 
 
 ### Think 🤔
