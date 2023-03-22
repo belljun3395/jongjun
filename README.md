@@ -18,7 +18,7 @@ Study는 개인적으로 공부하는 것에 관한 기록입니다.
   + [모던 자바인 액션](https://github.com/belljun3395/jongjun/tree/main/study/java/modenJavaInAction)
   + [오브젝트](https://github.com/belljun3395/jongjun/tree/main/study/java/object)
   + [이펙티브자바](https://github.com/belljun3395/jongjun/tree/main/study/java/effectiveJava)
-  + [디자인패턴)(https://github.com/belljun3395/jongjun/tree/main/study/java/desginPattern)
+  + [디자인패턴](https://github.com/belljun3395/jongjun/tree/main/study/java/desginPattern)
 + [spring](https://github.com/belljun3395/jongjun/tree/main/study/spring)
   + [전문가를 위한 스프링5](https://github.com/belljun3395/jongjun/tree/main/study/spring/%EC%A0%84%EB%AC%B8%EA%B0%80%EB%A5%BC%EC%9C%84%ED%95%9C%EC%8A%A4%ED%94%84%EB%A7%815)
 
