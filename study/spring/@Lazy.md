@@ -51,21 +51,13 @@ targer dependency가 없는 경우 호출 시 예외를 통해서만 알 수 있
 public class Stage {
 
     public Singer danceSinger;
-    public Singer rockSinger;
 
     public Stage(@Qualifier("danceSinger") Singer danceSinger) {
         this.danceSinger = danceSinger;
         danceSinger.sing();
     }
 
-    @Autowired
-    @Qualifier("rockSinger")
-    public void setRockSinger(Singer rockSinger) {
-        this.rockSinger = rockSinger;
-    }
-
     public void sing() {
-        rockSinger.sing();
         danceSinger.sing();
     }
 }
