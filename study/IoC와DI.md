@@ -78,7 +78,7 @@ public class MovieLister {
 
 그렇기에 마틴 파울러는 IoC라는 범용적인 용어는 사람들이 혼동할 가능성이 크기에 DI라는 이름을 만들었다고 한다.
 
-즉, DI는 IoC중 하나라 생각할 수 있다. *(`DI ( IOC)`, **DI 말고 Service Locator와 같은 개념도 있다**.)*
+즉, DI는 IoC중 하나라 생각할 수 있다. *(`DI ( IOC`, **DI 말고 Service Locator와 같은 개념도 있다**.)*
 
 
 
