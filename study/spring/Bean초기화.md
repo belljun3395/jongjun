@@ -49,7 +49,7 @@ public class Foo implements InitializingBean {
 3. BeanFactoryAware, ApplicationContextAware 처리
 4. BeanPostProcessor의 postProcessBeforeInitialization 처리
 5. 빈 초기화 (@PostConstruct, @Bean(initMethod = ..), InitializingBean)
-6. BeanPostProcessor의 postProcessBeforeInitialization 처리
+6. BeanPostProcessor의 postProcessAfterInitialization 처리
 
 
 
@@ -59,8 +59,15 @@ public class Foo implements InitializingBean {
 @Component
 public class Foo  implements BeanFactoryAware, ApplicationContextAware, InitializingBean {
 
+    private String name;
+
     public Foo() {
         System.out.println("Foo.Foo");
+    }
+
+    public void setName(String name) {
+        System.out.println("Foo.setName");
+        this.name = name;
     }
 
     @Override
@@ -79,7 +86,8 @@ public class Foo  implements BeanFactoryAware, ApplicationContextAware, Initiali
     }
 
     @Component
-    static class FooPostProcessor implements BeanPostProcessor { // Foo에서 Foo에 대한 후처리를 할 수 없다.
+    static class FooPostProcessor implements BeanPostProcessor { 
+      // FooPostProccessor 에서 의존성 주입이 끝난 Foo에 대한 후처리를 진행한다. 
 
         @Override
         public Object postProcessBeforeInitialization(Object bean, String beanName)
@@ -94,7 +102,7 @@ public class Foo  implements BeanFactoryAware, ApplicationContextAware, Initiali
         public Object postProcessAfterInitialization(Object bean, String beanName)
             throws BeansException {
             if (bean instanceof Foo) {
-                System.out.println("Foo.postProcessBeforeInitialization");
+                System.out.println("Foo.postProcessAfterInitialization");
             }
             return BeanPostProcessor.super.postProcessAfterInitialization(bean, beanName);
         }
@@ -103,12 +111,15 @@ public class Foo  implements BeanFactoryAware, ApplicationContextAware, Initiali
 ```
 
 ```
+// 의존성 주입
 Foo.Foo
+Foo.setName
 Foo.setBeanFactory
 Foo.setApplicationContext
+// 초기화
 Foo.postProcessBeforeInitialization
 Foo.afterPropertiesSet
-Foo.postProcessBeforeInitialization
+Foo.postProcessAfterInitialization
 ```
 
 
