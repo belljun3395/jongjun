@@ -28,6 +28,8 @@
 
 그림으로 알아보면
 
+*출처 : https://refactoring.guru/ko/design-patterns/bridge*
+
 ![브리지 패턴 문제](https://refactoring.guru/images/patterns/diagrams/bridge/problem-ko.png?id=d6a269defe845caae2181e1568256f16)
 
 위와 같았던 계층구조를
