@@ -282,13 +282,11 @@ public class EntityJpaDataSourceConfig {
 	}
 
 	@Bean(name = JPA_VENDOR_ADAPTER_NAME)
-	@ConditionalOnMissingBean
 	public JpaVendorAdapter jpaVendorAdapter() {
 		return new HibernateJpaVendorAdapter();
 	}
 
 	@Bean(name = ENTITY_MANAGER_FACTORY_BUILDER_NAME)
-	@ConditionalOnMissingBean
 	public EntityManagerFactoryBuilder entityManagerFactoryBuilder(
 			@Qualifier(value = JPA_VENDOR_ADAPTER_NAME) JpaVendorAdapter jpaVendorAdapter,
 			@Qualifier(value = JPA_PROPERTIES_NAME) JpaProperties jpaProperties,
@@ -300,11 +298,6 @@ public class EntityJpaDataSourceConfig {
 	}
 
 	@Bean(name = ENTITY_MANAGER_FACTORY_NAME)
-	@Primary
-	@ConditionalOnMissingBean({
-		LocalContainerEntityManagerFactoryBean.class,
-		EntityManagerFactory.class
-	})
 	public LocalContainerEntityManagerFactoryBean entityManagerFactory(
 			@Qualifier(value = DATASOURCE_NAME) DataSource dataSource,
 			@Qualifier(value = ENTITY_MANAGER_FACTORY_BUILDER_NAME) EntityManagerFactoryBuilder builder) {
@@ -320,7 +313,6 @@ public class EntityJpaDataSourceConfig {
 	}
 
 	@Bean(name = TRANSACTION_MANAGER_NAME)
-	@ConditionalOnMissingBean(TransactionManager.class)
 	public PlatformTransactionManager transactionManager(
 			@Qualifier(ENTITY_MANAGER_FACTORY_NAME) EntityManagerFactory emf) {
 		return new JpaTransactionManager(emf);
