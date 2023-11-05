@@ -2,7 +2,7 @@
 
 <br>
 
-[관련 코드 바로가기](https://github.com/belljun3395/hiit-server/tree/foo_repository/src/main/java/com/hiit/api/repository)
+[관련 코드 바로가기](https://github.com/JNU-econovation/hiit-server/tree/foo/repository/src/main/java/com/hiit/api/repository)
 
 
 

@@ -2,7 +2,7 @@
 
 <br>
 
-[관련 코드 바로가기](https://github.com/belljun3395/hiit-server/blob/main/src/main/java/com/hiit/api/infra/flyway/config/EntityFlywayConfig.java)
+[관련 코드 바로가기](https://github.com/JNU-econovation/hiit-server/blob/main/src/main/java/com/hiit/api/infra/flyway/config/EntityFlywayConfig.java)
 
 
 
