@@ -27,7 +27,7 @@ spring:
 
 ## DataSourceAutoConfiguration을 자바 구성으로 구현해 보기
 
-아마 처음 자바 구성을 직접 구현하려면 어디서부터 시작해야할지 전혀 감이 안 잡힐 것입니다.
+아마 처음 자바 구성을 직접 구현하려면 어디서부터 시작해야 할지 전혀 감이 안 잡힐 것입니다.
 
 이번 글에서 위의 데이터소스와 관련된 `yml` 파일을 자바 구성으로 구현해 보며 어떠한 것을 학습할 수 있는지 확인해 봅시다.
 
@@ -98,13 +98,13 @@ public class JpaDataSourceConfig {
 
 그리고 빈을 어떻게 설정할 수 있는지 공부할 수 있습니다.
 
-`AutoConfiguration` 클래스 위에 존재하는 많은 어노테이션를 보며 공부하다 보면 단순히 `@Configuration` / `@Bean` 조합 혹은 `@Component`를 통해 빈을 등록할 때보나 보다 세세한 설정을 할 수 있습니다.
+`AutoConfiguration` 클래스 위에 존재하는 많은 어노테이션을 보며 공부하다 보면 단순히 `@Configuration` / `@Bean` 조합 혹은 `@Component`를 통해 빈을 등록할 때보나 보다 세세한 설정을 할 수 있습니다.
 
 
 
 ## 마치며
 
-백지에서 `AutoConfiguration`을 자바 구성으로 대체 해보자는 생각을 할 수 있지는 않았습니다.
+백지에서 `AutoConfiguration`을 자바 구성으로 대체해보자는 생각을 할 수 있지는 않았습니다.
 
 좋은 기회로 합류하였던 프로젝트에서 [JpaDataSourceConfig](https://github.com/depromeet12th/three-days-server/blob/develop/data/src/main/java/com/depromeet/threedays/data/JpaDataSourceConfig.java)를 자바 구성으로 작성한 코드가 존재하였습니다.
 
